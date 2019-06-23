@@ -14,7 +14,14 @@
             @endforeach
 
         @endif
-        <input type="text" class="form-control" placeholder="Search Student Fees Total" style="width: 500px;" name="student_id" aria-label="Student's Id" aria-describedby="button-addon2">
+            <div class="form-group">
+                <label for="student_no">Student Number</label>
+                <select id="student_no" name="student_id"  class="form-control">
+                    @foreach($student_no as $student)
+                        <option>{{$student->student_no}}</option>
+                    @endforeach
+                </select>
+            </div>
         <div class="input-group-append">
             <button class="btn btn-outline-secondary" name="stid" type="submit" id="button-addon2">Search</button>
         </div>

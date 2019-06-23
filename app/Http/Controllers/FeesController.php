@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Fee;
+use App\Student;
 use Illuminate\Http\Request;
 
 class FeesController extends Controller
@@ -33,14 +34,16 @@ class FeesController extends Controller
     public function searchstudent(Request $request){
         $totalfee = Fee::where('student_id', $request->student_id)->sum('amount');
         if(!$totalfee){
-            return $totalfee="Empty";
+            $totalfee="Empty";
         }
-        return view('naomi.search', compact('totalfee'));
+        $student_no = Student::all();
+        return view('naomi.search', compact('totalfee','student_no'));
 
     }
     public function search(){
 
-        return view('naomi.search');
+        $student_no = Student::all();
+        return view('naomi.search',compact('student_no'));
 
     }
 

@@ -3,7 +3,7 @@
 
     <div class="container">
         <div class="row">
-            <form class="needs-validation" novalidate action="/student/store" method="get">
+            <form class="needs-validation" novalidate action="{{route('storestudent')}}" method="get">
                 @if ($errors->any())
                     @foreach($errors->all() as $error)
                         <div  class="alert alert-danger" role="alert">

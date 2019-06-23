@@ -16,8 +16,8 @@ Route::get('/', function () {
 });
 Route::get('/fee', 'FrontController@fee')->name('fee');
 Route::get('/student', 'FrontController@student')->name('student');
-Route::get('/student/store' , 'StudentsController@store');
-Route::get('/fee/store', 'FeesController@store');
+Route::get('/student/store' , 'StudentsController@store')->name('storestudent');
+Route::get('/fee/store', 'FeesController@store')->name('storefee');
 Route::get('search','FeesController@search' )->name('search');
 Route::get('/searchid' , 'FeesController@searchstudent')->name('searchstudent');
 

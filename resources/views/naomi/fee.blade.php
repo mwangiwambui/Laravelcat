@@ -3,7 +3,7 @@
 
     <div class="container">
         <div class="row">
-            <form action="/fee/store" method="get">
+            <form action="{{route('storefee')}}" method="get">
                 @if ($errors->any())
                     @foreach($errors->all() as $error)
                         <div class="alert alert-danger" role="alert">
